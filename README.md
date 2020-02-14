@@ -1,4 +1,6 @@
 # Installer Project
+  This project is create for public ``Makefile`` download and describe how to install program for any project
+  
 ## Crypto Trading Installation
   ```
   curl https://raw.githubusercontent.com/noppakao/Installer/master/Crypto-Trading-Makefile > Makefile
