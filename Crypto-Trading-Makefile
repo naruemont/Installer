@@ -5,7 +5,7 @@ PATCH    = 1
 BUILD    = 0
 SUFFIX 	 = crypto-trading
 CHOST	 = x86_64-linux-gnu	 
-CARCH    = master beta deversifi-beta 
+VERSION  = master beta deversifi-beta 
 
 packages:
 	@echo "Update Environments"	&& test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev\
@@ -16,7 +16,7 @@ packages:
 	sudo chown $(shell id -u) /data/db
 
 git-clone:
-	@echo "Initialization Clone Project" && git clone --branch $(CHOST) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
+	@echo "Initialization Clone Project" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
 
 link:
 	cd app/server && ln -f -s ../../$(KLOCAL)/bin/K-$(CHOST) K
@@ -35,8 +35,8 @@ credentials:
 install:
 	@$(MAKE) packages			
 	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  v$(MAJOR).$(MINOR).$(PATCH)+$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
-	@echo $(CARCH) | tr ' ' "\n" | cat -n
-	@read -p "[$(shell seq -s / `echo $(CARCH) | tr ' ' "\n" | wc -l`)]: " chost && $(MAKE) git-clone CHOST=`echo $(CARCH) | cut -d ' ' -f$${chost}`
+	@echo $(VERSION) | tr ' ' "\n" | cat -n
+	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " chost && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${chost}`
 	$(MAKE) link 
 	@echo "Finished Installation"
 
