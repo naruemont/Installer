@@ -6,12 +6,10 @@
   curl https://raw.githubusercontent.com/noppakao/Installer/master/Crypto-Trading-Makefile > Makefile
   
   make credentials
-  
   ```
   - Add SSH key to Github account. [How to Add SSH Key](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
   
   ```
   make install
   ```
-  
   - Select your prefer version of **Crypto Trading Bot**
