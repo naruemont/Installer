@@ -5,4 +5,4 @@
   
   make install
   ```
-  Add SSH to Github account https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account
+  - Add SSH key to Github account. [How to Add SSH Key](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account)
