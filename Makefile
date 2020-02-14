@@ -28,7 +28,7 @@ credentials:
 	test -f ~/.ssh/id_rsa || (				\
 	read -p "Please Enter Your Email:" email;	\
 	ssh-keygen -t rsa -b 4096 -C $$email);)
-	@echo "Please Add SSH key to your github account:" && cat ~/.ssh/id_rsa.pub && eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
+	@echo "Please Add SSH key to your github account:" && eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa && cat ~/.ssh/id_rsa.pub
 
 	
 install:
