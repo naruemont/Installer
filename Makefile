@@ -1,0 +1,43 @@
+#!/bin/sh
+MAJOR    = 0
+MINOR    = 0
+PATCH    = 1
+BUILD    = 0
+SUFFIX 	 = crypto-trading
+CHOST	 = x86_64-linux-gnu	 
+CARCH    = master beta deversifi-beta 
+
+packages:
+	@echo "Update Environments"	&& test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev\
+	|| (test -n "`command -v yum`" && sudo yum -y install gcc-c++ automake autoconf libtool libxml2 libxml2-devel openssl stunnel python curl gzip screen libboost-all-dev) \
+	|| (test -n "`command -v brew`" && (xcode-select --install || :) && (brew install automake autoconf libxml2 sqlite openssl zlib stunnel python curl libboost-all-dev gzip proctools || brew upgrade || :)) \
+	|| (test -n "`command -v pacman`" && sudo pacman --noconfirm -S --needed base-devel libxml2 zlib sqlite curl libcurl-compat openssl stunnel python gzip screen libboost-all-dev)
+	sudo mkdir -p /data/db/
+	sudo chown $(shell id -u) /data/db
+
+git-clone:
+	@echo "Initialization Clone Project" && git clone --branch $(CHOST) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
+
+link:
+	cd app/server && ln -f -s ../../$(KLOCAL)/bin/K-$(CHOST) K
+	test -n "`ls *.sh 2>/dev/null`" || (cp etc/K.sh.dist K.sh && chmod +x K.sh)
+	@$(MAKE) gdax -s
+
+
+credentials: 
+	test -f ~/.ssh/id_rsa || (				\
+	read -p "Please Enter Your Email:" email;	\
+	ssh-keygen -t rsa -b 4096 -C $$email);)
+	@echo "Please Add SSH key to your github account:" && cat ~/.ssh/id_rsa.pub && eval $(ssh-agent -s) && ssh-add ~/.ssh/id_rsa
+
+	
+install:
+	@$(MAKE) packages credentials				
+	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  v$(MAJOR).$(MINOR).$(PATCH)+$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
+	@echo $(CARCH) | tr ' ' "\n" | cat -n
+	@read -p "[$(shell seq -s / `echo $(CARCH) | tr ' ' "\n" | wc -l`)]: " chost && $(MAKE) git-clone CHOST=`echo $(CARCH) | cut -d ' ' -f$${chost}`
+	$(MAKE) link 
+	@echo "Finished Installation"
+
+	
+
