@@ -37,7 +37,7 @@ install:
 	@$(MAKE) packages credentials				
 	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  v$(MAJOR).$(MINOR).$(PATCH)+$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
 	@echo $(CARCH) | tr ' ' "\n" | cat -n
-	@read -p "[$(shell seq -s / `echo $(CARCH) | tr ' ' "\n" | wc -l`)]: " chost && $(MAKE) git-clone CHOST=`echo $(CARCH) | cut -d ' ' -f$${chost}`
+	@read -p "[$(shell seq -s / `echo $(CARCH) | tr ' ' "\n" | wc -l`)]: " chost && $(MAKE) git-clone CHOST=`echo $(CARCH) | cut -d ' ' -f$${chost}` || $(MAKE) credentials
 	$(MAKE) link 
 	@echo "Finished Installation"
 
