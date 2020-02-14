@@ -30,6 +30,7 @@ credentials:
 	ssh-keygen -t rsa -b 4096 -C $$email);)
 	eval `ssh-agent` && ssh-add ~/.ssh/id_rsa
 	@echo "Please Add SSH key to your github account:" && cat ~/.ssh/id_rsa.pub
+	@read -p "Are you add SSH Key already?(Press ENTER):" enter;
 
 	
 install:
