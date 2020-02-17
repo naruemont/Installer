@@ -34,3 +34,14 @@
   ```
   make install
   ```
+  
+  - Start Program
+  ```
+  make start
+  ```
+  
+  - Stop Program
+  ```
+  make stop
+  ```
+  ```
