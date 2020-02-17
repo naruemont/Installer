@@ -21,7 +21,7 @@ start:
 	nohup node server.js && echo "Deversifi Middleware API start listenning on port 3001" &
 
 stop:
-	kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $2}') && echo "Deversifi Middleware API has been stopped"
+	kill -9 $(lsof -i TCP:3001 | grep LISTEN | awk '{print $$2}') && echo "Deversifi Middleware API has been stopped"
 
 	
 
