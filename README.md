@@ -47,6 +47,7 @@
   
  ## Get Trade Logs Programs 
  ### GET_TRADE_HISTORY_BITFINEX [*(reposity)*](https://github.com/noppakao/CryptoTrading)
+  - [Create Personel Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token) *Note. **Select read:repo_hook***
 
   - Download Makefile
   ```
