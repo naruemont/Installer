@@ -3,8 +3,8 @@
 
 install:
 	@echo "Initialization Download Get Trade History Bitfinex" 
-	@read -p "Please Enter Your Personel Token:" token;	\
-	curl --header 'Authorization: token $token' \
+	@read -p "Please Enter Your Personel Token:" TOKEN;	\
+	curl --header 'Authorization: token $$TOKEN' \
 	     --header 'Accept: application/vnd.github.v3.raw' \
 	     --remote-name \
 	     --location https://api.github.com/repos/naruemont/ExchangeLogExport/contents/GET_TRADE_HISTORY_BITFINEX/GET_TRADE_HISTORY_BITFINEX.tar.gz \
