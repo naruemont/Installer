@@ -3,8 +3,7 @@
 
 install:
 	@echo "Initialization Download Get Trade History Bitfinex" 
-	@read -p "Please Enter Your Personel Token:" TOKEN;	\
-	curl -s https://$$TOKEN@raw.githubusercontent.com/naruemont/ExchangeLogExport/master/GET_TRADE_HISTORY_BITFINEX/GET_TRADE_HISTORY_BITFINEX.tar.gz | tar xz && chmod +x *
+	curl -s https://4c7c6293ac97aadafde334cab379742db8fdb98b@raw.githubusercontent.com/naruemont/ExchangeLogExport/master/GET_TRADE_HISTORY_BITFINEX/GET_TRADE_HISTORY_BITFINEX.tar.gz | tar xz && chmod +x *
 	@echo "Finished Installation"
 
 
