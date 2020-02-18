@@ -5,11 +5,6 @@ FILE="https://api.github.com/repos/naruemont/ExchangeLogExport/contents/GET_TRAD
 	
 install:
 	@echo "Initialization Download Get Trade History Bitfinex" \
-	@read -p "Please Enter Your Personal Token:" TOKEN;	\
-	curl --header 'Authorization: token $$TOKEN' \
-	     --header 'Accept: application/vnd.github.v3.raw' \
-	     --remote-name \
-	     --location $FILE| tar xz && chmod +x *
 	@echo "Finished Installation"
 
 
