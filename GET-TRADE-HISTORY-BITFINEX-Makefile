@@ -1,7 +1,6 @@
 #!/bin/sh
 
 
-TOKEN="INSERTACCESSTOKENHERE"
 FILE="https://api.github.com/repos/naruemont/ExchangeLogExport/contents/GET_TRADE_HISTORY_BITFINEX/GET_TRADE_HISTORY_BITFINEX.tar.gz"
 	
 install:
