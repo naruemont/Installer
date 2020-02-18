@@ -4,7 +4,7 @@
 FILE="https://api.github.com/repos/naruemont/ExchangeLogExport/contents/GET_TRADE_HISTORY_BITFINEX/GET_TRADE_HISTORY_BITFINEX.tar.gz"
 	
 install:
-	@echo "Initialization Download Get Trade History Bitfinex" \
+	@echo "Initialization Download Get Trade History Bitfinex" 
 	@echo "Finished Installation"
 
 
