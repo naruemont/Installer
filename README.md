@@ -45,6 +45,23 @@
   make stop
   ```
   
+ ## Crypto Future Trading Installation [*(reposity)*](https://github.com/noppakao/Crypto-Future-Trading)
+
+  - Download Makefile
+  ```
+  curl https://raw.githubusercontent.com/noppakao/Installer/master/Crypto-Future-Trading-Makefile > Makefile
+  ```
+  
+  - Create and Add SSH key to Github account. [How to Add SSH Key](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) ***Note.If you have already added SSH KEY to your GITHUP account.you can skip below this.***
+  ```
+  make credentials
+  ```
+  
+  - Install ***Crypto Future Trading Bot***
+  ```
+  make install
+  ```
+  
  ## Get Trade Logs Programs 
  ### GET_TRADE_HISTORY_BITFINEX [*(reposity)*](https://github.com/noppakao/CryptoTrading)
   - [Create Personel Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token) *Note. **Select read:repo_hook***
