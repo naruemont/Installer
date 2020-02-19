@@ -34,7 +34,7 @@ credentials:
 	
 install:
 	@$(MAKE) packages	
-	$(MAKE) git-clone VERSION=`echo $(VERSION)
+	$(MAKE) git-clone
 	$(MAKE) link 
 	@echo "Finished Installation"
 
