@@ -16,7 +16,7 @@ packages:
 	sudo chown $(shell id -u) /data/db
 
 git-clone:
-	@echo "Initialization Clone Project ($(VERSION) )" && git clone --branch $(VERSION) git@github.com:noppakao/Crypto-Future-Trading.git && mv ./CryptoFutureTrading/* . && rm -R CryptoFutureTrading
+	@echo "Initialization Clone Project ($(VERSION) )" && git clone --branch $(VERSION) git@github.com:noppakao/Crypto-Future-Trading.git && mv ./Crypto-Future-Trading/* . && rm -R Crypto-Future-Trading
 
 link:
 	cd app/server && ln -f -s ../../$(KLOCAL)/bin/K-$(CHOST) K
@@ -33,10 +33,8 @@ credentials:
 
 	
 install:
-	@$(MAKE) packages			
-	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  v$(MAJOR).$(MINOR).$(PATCH)+$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
-	@echo $(VERSION) | tr ' ' "\n" | cat -n
-	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${selected_version}`
+	@$(MAKE) packages	
+	$(MAKE) git-clone VERSION=`echo $(VERSION)
 	$(MAKE) link 
 	@echo "Finished Installation"
 
