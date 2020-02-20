@@ -61,6 +61,23 @@
   ```
   make install
   ```
+   
+ ## Crypto Dashboard Installation [*(reposity)*](https://github.com/naruemont/CryptoDashboard)
+
+  - Download Makefile
+  ```
+  curl https://raw.githubusercontent.com/noppakao/Installer/master/Crypto-Dashboard-Makefile > Makefile
+  ```
+  
+  - Create and Add SSH key to Github account. [How to Add SSH Key](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) ***Note.If you have already added SSH KEY to your GITHUP account.you can skip below this.***
+  ```
+  make credentials
+  ```
+  
+  - Install ***Crypto Dashboard***
+  ```
+  make install
+  ```
   
  ## Get Trade Logs Programs 
  ### GET_TRADE_HISTORY_BITFINEX [*(reposity)*](https://github.com/noppakao/CryptoTrading)
