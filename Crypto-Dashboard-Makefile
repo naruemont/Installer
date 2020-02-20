@@ -16,8 +16,9 @@ credentials:
 	eval `ssh-agent` && ssh-add ~/.ssh/id_rsa
 	@echo "Please Add SSH key to your github account:" && cat ~/.ssh/id_rsa.pub
 	  
-install: $(MAKE) yarn-install git-clone && yarn install
-	 @echo "Finished Installation"
+install: 
+	$(MAKE) yarn git-clone && yarn install
+	@echo "Finished Installation"
 	 
 
 start: 
