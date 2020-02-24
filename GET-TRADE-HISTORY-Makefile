@@ -4,7 +4,7 @@ BRANCH  = GET_TRADE_HISTORY_BITFINEX GET_TRADE_HISTORY_BITFINEX_WEB_SYNC KRAKEN_
 
 
 git-clone:
-	@echo "Initialization Clone Initialization Download Get Trade History Project ($(BRANCH) )" && git clone --branch $(BRANCH) git@github.com:naruemont/ExchangeLogExport.gi && mv ./ExchangeLogExport/* . && rm -R ExchangeLogExport
+	@echo "Initialization Clone Initialization Download Get Trade History Project ($(BRANCH) )" && git clone --branch $(BRANCH) git@github.com:naruemont/ExchangeLogExport.git && mv ./ExchangeLogExport/* . && rm -R ExchangeLogExport
 
 credentials: 
 	test -f ~/.ssh/id_rsa || (				\
