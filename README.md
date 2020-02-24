@@ -80,7 +80,7 @@
   ```
   
  ## Get Trade Logs Programs 
- ### GET_TRADE_HISTORY_BITFINEX [*(reposity)*](https://github.com/noppakao/CryptoTrading)
+ ### GET_TRADE_HISTORY [*(reposity)*](https://github.com/naruemont/ExchangeLogExport)
   - [Create Personel Token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line#creating-a-token) *Note. **Select read:repo_hook***
 
   - Download Makefile
@@ -97,4 +97,8 @@
   ```
   make install
   ```
+  - There 3 different programs for choosing
+    1.[GET_TRADE_HISTORY_BITFINEX](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX)
+    2.[GET_TRADE_HISTORY_BITFINEX_WEB_SYNC](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX_WEB_SYNC)
+    3.[KRAKEN_LEVELS](https://github.com/naruemont/ExchangeLogExport/tree/KRAKEN_LEVELS)
   
