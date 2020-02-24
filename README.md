@@ -93,12 +93,13 @@
   make credentials
   ```
   
-  - Install ***GET_TRADE_HISTORY_BITFINEX***
+  - Install ***GET_TRADE_HISTORY***
   ```
   make install
   ```
-  - There 3 different programs for choosing
-    1.[GET_TRADE_HISTORY_BITFINEX](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX)
-    2.[GET_TRADE_HISTORY_BITFINEX_WEB_SYNC](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX_WEB_SYNC)
-    3.[KRAKEN_LEVELS](https://github.com/naruemont/ExchangeLogExport/tree/KRAKEN_LEVELS)
+  - There 3 different programs for choosing: <br/>
+
+    1.[GET_TRADE_HISTORY_BITFINEX](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX) <br/>
+    2.[GET_TRADE_HISTORY_BITFINEX_WEB_SYNC](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX_WEB_SYNC)<br/>
+    3.[KRAKEN_LEVELS](https://github.com/naruemont/ExchangeLogExport/tree/KRAKEN_LEVELS)<br/>
   
