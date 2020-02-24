@@ -15,7 +15,7 @@ credentials:
 
 	
 install:			
-	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  \n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
+	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " Select your version  to clone project:\n"
 	@echo $(BRANCH) | tr ' ' "\n" | cat -n
 	@read -p "[$(shell seq -s / `echo $(BRANCH) | tr ' ' "\n" | wc -l`)]: " selected_branch && $(MAKE) git-clone BRANCH=`echo $(BRANCH) | cut -d ' ' -f$${selected_branch}`
 	@echo "Finished Installation"
