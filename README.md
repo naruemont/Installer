@@ -97,7 +97,7 @@
   ```
   make install
   ```
-  - There 3 different programs for choosing: <br/>
+  - There are 3 different programs for choosing: <br/>
 
     1.[GET_TRADE_HISTORY_BITFINEX](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX) <br/>
     2.[GET_TRADE_HISTORY_BITFINEX_WEB_SYNC](https://github.com/naruemont/ExchangeLogExport/tree/GET_TRADE_HISTORY_BITFINEX_WEB_SYNC)<br/>
