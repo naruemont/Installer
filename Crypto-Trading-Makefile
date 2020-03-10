@@ -5,7 +5,7 @@ PATCH    = 1
 BUILD    = 0
 SUFFIX 	 = crypto-trading
 CHOST	 = x86_64-linux-gnu	 
-VERSION  = master beta v0.0.1.0-x86_64-linux-gnu-crypto-trading<deversifi-beta>
+VERSION  = master beta deversifi-beta 
 
 packages:
 	@echo "Update Environments"	&& test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev\
@@ -16,7 +16,7 @@ packages:
 	sudo chown $(shell id -u) /data/db
 
 git-clone:
-	@echo "Initialization Clone Project ($(VERSION))" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
+	@echo "Initialization Clone Project ($(VERSION) )" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
 
 link:
 	cd app/server && ln -f -s ../../$(KLOCAL)/bin/K-$(CHOST) K
@@ -41,5 +41,4 @@ install:
 	@echo "Finished Installation"
 
 	
-
 
