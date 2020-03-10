@@ -5,7 +5,7 @@ PATCH    = 1
 BUILD    = 0
 SUFFIX 	 = crypto-trading
 CHOST	 = x86_64-linux-gnu	 
-VERSION  = master beta v0.0.1.0-x86_64-linux-gnu-crypto-trading:deversifi-beta
+VERSION  = master beta v0.0.1.0-x86_64-linux-gnu-crypto-trading(deversifi-beta)
 
 packages:
 	@echo "Update Environments"	&& test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev\
@@ -36,9 +36,10 @@ install:
 	@$(MAKE) packages			
 	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  v$(MAJOR).$(MINOR).$(PATCH)+$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
 	@echo $(VERSION) | tr ' ' "\n" | cat -n
-	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${selected_version}`
+	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${selected_version} | cut -d '(' -f 1`
 	$(MAKE) link 
 	@echo "Finished Installation"
 
 	
+
 
