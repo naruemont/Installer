@@ -36,7 +36,7 @@ install:
 	@$(MAKE) packages			
 	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  v$(MAJOR).$(MINOR).$(PATCH)+$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
 	@echo $(VERSION) | tr ' ' "\n" | cat -n
-	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d '<' -f$${selected_version}`
+	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${selected_version}`
 	$(MAKE) link 
 	@echo "Finished Installation"
 
