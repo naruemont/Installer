@@ -16,7 +16,7 @@ packages:
 	sudo chown $(shell id -u) /data/db
 
 git-clone:
-	@echo "Initialization Clone Project ($(VERSION) )" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
+	@echo "Initialization Clone Project ($(VERSION))" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
 
 link:
 	cd app/server && ln -f -s ../../$(KLOCAL)/bin/K-$(CHOST) K
