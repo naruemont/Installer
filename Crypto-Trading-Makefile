@@ -5,8 +5,7 @@ PATCH    = 1
 BUILD    = 0
 SUFFIX 	 = crypto-trading
 CHOST	 = x86_64-linux-gnu	 
-VERSION  = v0.0.0.1-x86_64-linux-gnu-crypto-trading\(master\) v0.0.1.0-x86_64-linux-gnu-crypto-trading\(deversifi-beta\) 
-add_more_exchanges\(ฺlastest-beta-version\)
+VERSION  = v0.0.0.1-x86_64-linux-gnu-crypto-trading\(master\) v0.0.1.0-x86_64-linux-gnu-crypto-trading\(deversifi-beta\) add_more_exchanges\(ฺlastest-beta-version\)
 
 packages:
 	@echo "Update Environments"	&& test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev\
