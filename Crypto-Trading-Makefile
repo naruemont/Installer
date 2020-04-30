@@ -2,7 +2,7 @@
 MAJOR    = 0
 MINOR    = 0
 PATCH    = 1
-BUILD    = 1
+BUILD    = 0
 SUFFIX 	 = crypto-trading
 CHOST	 = x86_64-linux-gnu	 
 VERSION  = v0.0.0.1-x86_64-linux-gnu-crypto-trading\(master\) v0.0.1.0-x86_64-linux-gnu-crypto-trading\(deversifi-beta\) add_more_exchanges\(ฺlastest-beta-version\)
@@ -39,4 +39,3 @@ install:
 	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${selected_version} | cut -d '(' -f 1`
 	$(MAKE) link 
 	@echo "Finished Installation"
-
