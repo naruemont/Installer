@@ -1,7 +1,7 @@
 #!/bin/sh
 
 git-clone:
-	@echo "Initialization Clone Deversifi Middleware API Project" && git clone --branch v0.0.1-deversifi_middleware_api git@github.com:noppakao/Deversifi_Middleware_API.git && mv ./Deversifi_Middleware_API/* . && rm -R Deversifi_Middleware_API
+	@echo "Initialization Clone Deversifi Middleware API Project" && git clone --branch dvf_starkware_api_version git@github.com:noppakao/Deversifi_Middleware_API.git && mv ./Deversifi_Middleware_API/* . && rm -R Deversifi_Middleware_API
 
 credentials: 
 	test -f ~/.ssh/id_rsa || (				\
