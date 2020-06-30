@@ -18,7 +18,7 @@
   make install
   ```
   
-## Deversifi Middleware API Installation [*(reposity)*](https://github.com/noppakao/Deversifi_Middleware_API)
+## Deversifi Middleware API Installation [*(reposity)*](https://github.com/naruemont/Deversifi_Middleware_API/tree/dvf_starkware_api_version)
 
   - Download Makefile
   ```
