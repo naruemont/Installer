@@ -17,7 +17,7 @@ packages:
 	
 mysql-server:
 	test -n "`command -v apt-get`" && sudo apt-get install mysql-server && sudo systemctl start mysql && \
-	sudo systemctl enable mysql && mysql -e "create database K;"
+	sudo systemctl enable mysql && mysql -e "CREATE DATABASE IF NOT EXISTS K;"
 	
 git-clone:
 	@echo "Initialization Clone Project ($(VERSION))" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
