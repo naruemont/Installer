@@ -8,13 +8,17 @@ CHOST	 = x86_64-linux-gnu
 VERSION  = v0.0.0.1-x86_64-linux-gnu-crypto-trading\(master\) v0.0.1.0-x86_64-linux-gnu-crypto-trading\(deversifi-beta\) add_more_exchanges\(ฺlastest-beta-version\)
 
 packages:
-	@echo "Update Environments"	&& test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev\
-	|| (test -n "`command -v yum`" && sudo yum -y install gcc-c++ automake autoconf libtool libxml2 libxml2-devel openssl stunnel python curl gzip screen libboost-all-dev) \
-	|| (test -n "`command -v brew`" && (xcode-select --install || :) && (brew install automake autoconf libxml2 sqlite openssl zlib stunnel python curl libboost-all-dev gzip proctools || brew upgrade || :)) \
-	|| (test -n "`command -v pacman`" && sudo pacman --noconfirm -S --needed base-devel libxml2 zlib sqlite curl libcurl-compat openssl stunnel python gzip screen libboost-all-dev)
-	sudo mkdir -p /data/db/
-	sudo chown $(shell id -u) /data/db
-
+	test -n "`command -v apt-get`" && sudo apt-get -y install g++ build-essential automake autoconf libtool libxml2 libxml2-dev zlib1g-dev openssl stunnel python curl gzip screen libboost-all-dev libmysqlclient-dev\
+	|| (test -n "`command -v yum`" && sudo yum -y install gcc-c++ automake autoconf libtool libxml2 libxml2-devel openssl stunnel python curl gzip screen libboost-all-dev libmysqlclient-dev) \
+	|| (test -n "`command -v brew`" && (xcode-select --install || :) && (brew install automake autoconf libxml2 sqlite openssl zlib stunnel python curl libboost-all-dev gzip proctools libmysqlclient-dev || brew upgrade || :)) \
+	|| (test -n "`command -v pacman`" && sudo pacman --noconfirm -S --needed base-devel libxml2 zlib sqlite curl libcurl-compat openssl stunnel python gzip screen libboost-all-dev libmysqlclient-dev)
+	#sudo mkdir -p /data/db/
+	#sudo chown $(shell id -u) /data/db
+	
+mysql-server:
+	test -n "`command -v apt-get`" && sudo apt-get install mysql-server && sudo systemctl start mysql && \
+	sudo systemctl enable mysql
+	
 git-clone:
 	@echo "Initialization Clone Project ($(VERSION))" && git clone --branch $(VERSION) git@github.com:noppakao/CryptoTrading.git && mv ./CryptoTrading/* . && rm -R CryptoTrading
 
@@ -33,7 +37,7 @@ credentials:
 
 	
 install:
-	@$(MAKE) packages			
+	@$(MAKE) packages mysql-server			
 	@yes = | head -n`expr $(shell tput cols) / 2` | xargs echo && echo " _  __\n| |/ /  lastest version v$(MAJOR).$(MINOR).$(PATCH).$(BUILD)\n| ' /\n| . \\   Select your version\n|_|\\_\\  to clone project:\n"
 	@echo $(VERSION) | tr ' ' "\n" | cat -n
 	@read -p "[$(shell seq -s / `echo $(VERSION) | tr ' ' "\n" | wc -l`)]: " selected_version && $(MAKE) git-clone VERSION=`echo $(VERSION) | cut -d ' ' -f$${selected_version} | cut -d '(' -f 1`
