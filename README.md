@@ -1,5 +1,9 @@
 # Installer Project
   This project is create for public ``Makefile`` download and describe how to install program for any project
+  Please update your OS before install any project
+  ```
+  sudo apt-get update && sudo apt-get upgrade
+  ```
   
 ## Crypto Trading Installation [*(reposity)*](https://github.com/noppakao/CryptoTrading)
 
