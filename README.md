@@ -11,6 +11,10 @@
   ```
   curl https://raw.githubusercontent.com/noppakao/Installer/master/Crypto-Trading-Makefile > Makefile
   ```
+  or
+  ```
+  curl https://raw.githubusercontent.com/noppakao/Installer/master/Crypto-Trading-Tags-Filtered-Makefile > Makefile
+  ```
   
   - Create and Add SSH key to Github account. [How to Add SSH Key](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account) ***Note.If you have already added SSH KEY to your GITHUP account.you can skip below this.***
   ```
