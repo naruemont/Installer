@@ -11,7 +11,7 @@ CHOST    = x86_64-linux-gnu
 
 # List available branches and tags
 
-BRANCHES = $(shell git ls-remote --heads --tags git@github.com:naruemont/CryptoTrading.git | awk '{ print $$2 }' | sed 's/refs\/tags\///' | sort -u | tail -n 5)
+BRANCHES = $(shell git ls-remote --heads --tags git@github.com:naruemont/CryptoTrading.git | awk '{ print $$2 }' | sed 's/refs\/heads\///' | sed 's/refs\/tags\///' | sort -u | tail -n 5)
 BRANCH_OR_TAG = ""
 
 
